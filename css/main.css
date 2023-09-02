@@ -72,6 +72,14 @@ body {
   border-radius: 3px;
   text-align: center;
   animation: slideIn 0.5s ease-out;
+  background: linear-gradient(145deg, #f2f2f2, #d4d4d4); /* Adjusted to match body background */
+  box-shadow: 3px 3px 10px #bbb, -3px -3px 10px #fff; /* More subtle shadow */
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.output-area li:hover {
+  box-shadow: 2px 2px 8px #bbb, -2px -2px 8px #fff; /* Reduced depth on hover */
+  transform: scale(1.05); /* Add slight zoom on hover */
 }
 
 .output-area a {
