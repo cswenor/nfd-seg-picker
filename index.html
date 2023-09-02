@@ -1,0 +1,51 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>NFD Segment Picker</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/custom.css"> <!-- Your additional CSS file -->
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+  <div class="container">
+    <header class="header">
+      <h1>NFD Segment Picker</h1>
+      <p>You can use this to do random drawings for your NFD Segments</p>
+    </header>
+    
+    <section class="main-content">
+      <form action="#" id="nfdForm" class="nfd-form">
+        <label for="nfd">NFD:</label>
+        <input type="text" id="nfd" name="nfd" class="input-box">
+        <input type="checkbox" id="filterTwitter" name="filterTwitter" value="true">
+        <label for="filterTwitter">Filter by Twitter</label>
+        <input type="submit" value="Submit" class="submit-btn">
+      </form>
+      
+      <div id="output" class="output-area">
+        <!-- API Response will be shown here -->
+      </div>
+
+      <button id="pickWinnerBtn" class="winner-btn" style="display:none;">Pick a Winner</button>
+      <div id="winnerOutput" class="winner-output"></div>
+    </section>
+  </div>
+
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+/* General styling */
+body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0 0 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  background: #7b68ee; /* Soft shade of purple */
+  color: #fff;
+  padding: 10px 0;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/* Form styling */
+.nfd-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-top: 20px;
+  text-align: center;
+}
+
+.input-box {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.submit-btn {
+  background: #9370db; /* Another soft shade of purple */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #7b68ee; /* Hover effect */
+}
+
+/* Output styling */
+.output-area ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.output-area li {
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.winner-btn {
+  display: none;
+  margin-top: 20px;
+  background: #9370db; /* Soft shade of purple */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.winner-btn:hover {
+  background: #7b68ee; /* Hover effect */
+}
+
+.winner-output {
+  margin-top: 20px;
+  background: #eee;  /* Soft grey background */
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
