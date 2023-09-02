@@ -71,6 +71,17 @@ body {
   margin: 5px;
   border-radius: 3px;
   text-align: center;
+  animation: slideIn 0.5s ease-out;
+}
+
+.output-area a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.output-area a:hover {
+  color: #9370db; /* soft shade of purple */
 }
 
 .winner-btn {
@@ -94,4 +105,51 @@ body {
   padding: 20px;
   border-radius: 5px;
   text-align: center;
+}
+
+/* Animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form Appear Animation */
+.nfd-form {
+  animation: formAppear 0.5s ease-out;
+}
+
+/* Button Pulse Animation */
+.winner-btn {
+  animation: pulse 2s infinite;
+}
+
+
+
+@keyframes formAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

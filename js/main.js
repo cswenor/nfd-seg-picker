@@ -35,11 +35,12 @@ document.addEventListener("DOMContentLoaded", function() {
         
         for (const item of items) {
           const name = item.name || "Unknown";
+          const link = `${name}`;
           if (filterByTwitter) {
             const twitterHandle = item.properties.verified.twitter || "Unknown";
-            outputList += `<li>Name: ${name}, Twitter Handle: ${twitterHandle}</li>`;
+            outputList += `<li><a href="https://app.nf.domains/name/${link}" target="_blank">Name: ${name}</a>, Twitter Handle: ${twitterHandle}</li>`;
           } else {
-            outputList += `<li>Name: ${name}</li>`;
+            outputList += `<li><a href="https://app.nf.domains/name/${link}" target="_blank">Name: ${name}</a></li>`;
           }
         }
 
