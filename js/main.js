@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
           const item = items[i];
           if (item.properties && item.properties.verified && item.properties.verified.twitter) {
             // Introduce delay to avoid rate limiting
-            //await sleep(i * 30);
+            await sleep(100);
 
             const name = item.name;
             const badgeApiUrl = `${baseURL}badges/${name}`;
