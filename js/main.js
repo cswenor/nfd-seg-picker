@@ -6,6 +6,13 @@ async function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+function updateProgressBar(completed, total) {
+  const percentage = Math.floor((completed / total) * 100);
+  const progressBar = document.getElementById('progressBar');
+  progressBar.style.width = `${percentage}%`;
+  progressBar.textContent = `${percentage}%`;
+}
+
 // Attach event listener to form submit
 document.addEventListener("DOMContentLoaded", function() {
   const form = document.getElementById('nfdForm');
@@ -13,6 +20,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
   form.addEventListener('submit', async function(event) {
     event.preventDefault();
+
+
+
     const filterByTwitter = document.getElementById('filterTwitter').checked;
     const inputValue = document.getElementById('nfd').value;
     let url1 = `${baseURL}${inputValue}?view=brief&poll=false&nocache=false`;
@@ -27,17 +37,32 @@ document.addEventListener("DOMContentLoaded", function() {
       let data2 = await response.json();
       let items = data2.nfds;
       let filteredItems = [];
+      let twitterItems = Array();
 
       if (filterByTwitter) {
+            // Initialize progress bar
+
         for (let i = 0; i < items.length; i++) {
           const item = items[i];
           if (item.properties && item.properties.verified && item.properties.verified.twitter) {
+            twitterItems.push(item);
+          };
+        };
+        let completedRequests = 0;
+        let totalRequests = twitterItems.length;
+        for (let i = 0; i < twitterItems.length; i++) {
+          const item = twitterItems[i];
+          if (item.properties && item.properties.verified && item.properties.verified.twitter) {
             // Introduce delay to avoid rate limiting
-            await sleep(6000);
+            
 
             const name = item.name;
             const badgeApiUrl = `${baseURL}badges/${name}`;
             response = await fetch(badgeApiUrl);
+            completedRequests++;
+            updateProgressBar(completedRequests, totalRequests);
+            document.getElementById('progressContainer').style.display = 'block';
+            await sleep(6000);
             let badgeData = await response.json();
             if (badgeData.twitter) {
               const twitterName = badgeData.twitter[0].twitterName || '';

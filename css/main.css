@@ -129,6 +129,27 @@ body {
   animation: pulse 2s infinite;
 }
 
+/* Progress Bar styling */
+#progressContainer {
+  width: 100%;
+  background-color: #eee;  /* Soft grey background */
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-top: 20px;
+  text-align: center;
+  display: none;
+}
+
+#progressBar {
+  text-align: center;
+  line-height: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background: #9370db;  /* Soft shade of purple */
+  color: #fff;
+  font-weight: bold;
+}
+
 
 
 @keyframes formAppear {
