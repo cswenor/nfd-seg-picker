@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
             completedRequests++;
             updateProgressBar(completedRequests, totalRequests);
             document.getElementById('progressContainer').style.display = 'block';
-            await sleep(6000);
+            await sleep(1000);
             let badgeData = await response.json();
             if (badgeData.twitter) {
               const twitterName = badgeData.twitter[0].twitterName || '';
