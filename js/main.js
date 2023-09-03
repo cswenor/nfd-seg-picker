@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let badgeData = await response.json();
             if (badgeData.twitter) {
               const twitterName = badgeData.twitter[0].twitterName || '';
-              if (twitterName.toLowerCase() === name.toLowerCase()) {
+              if (twitterName.toLowerCase().includes(name.toLowerCase())) {
                 item.twitterName = twitterName;  // Add twitterName to the item
                 filteredItems.push(item);
               }
@@ -91,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       outputList += '</ul>';
       document.getElementById('output').innerHTML = outputList;
+      document.getElementById('totalSegments').textContent = `Total Segments: ${filteredItems.length}`;
       pickWinnerBtn.style.display = 'block';
 
     } catch (error) {
